@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Classes</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cardo:400i|Rubik:400,700&display=swap">
+
+  <style>
+    /* Add your CSS styles here */
+    :root {
+      --d: 700ms;
+      --e: cubic-bezier(0.19, 1, 0.22, 1);
+      --font-sans: 'Rubik', sans-serif;
+      --font-serif: 'Cardo', serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-image: url('https://i.pinimg.com/236x/9a/6f/fa/9a6ffa86d8b8837fc49cde455c7fd27d.jpg'); /* Background image for the entire page */
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+    }
+
+    .page-content {
+      display: flex; /* Changed display to flex */
+      justify-content: space-between; /* Added to make cards appear next to each other */
+      width: 80%; /* Adjust the width to your preference */
+      margin: 0 auto; /* Center the .page-content horizontally */
+    }
+
+    .card {
+      flex: 1; /* Added to distribute space evenly among the cards */
+      position: relative;
+      display: flex;
+      flex-direction: column; /* Changed flex-direction to column */
+      align-items: center; /* Center align content horizontally */
+      justify-content: center; /* Center align content vertically */
+      overflow: hidden;
+      padding: 1rem;
+      text-align: center;
+      color: black; /* Changed text color to black */
+      background-color: whitesmoke;
+      box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1),
+        0 2px 2px rgba(0, 0, 0, 0.1),
+        0 4px 4px rgba(0, 0, 0, 0.1),
+        0 8px 8px rgba(0, 0, 0, 0.1),
+        0 16px 16px rgba(0, 0, 0, 0.1);
+      height: 350px; /* Set a fixed height for cards */
+      width: 100%; /* Ensure the cards take up the available space */
+      margin-right: 1rem; /* Add margin between the cards */
+
+      &:last-child {
+        margin-right: 0; /* Remove margin from the last card */
+      }
+
+      &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 110%;
+        background-size: cover;
+        background-position: center;
+        backdrop-filter: blur(5px); /* Add blur effect here */
+        transition: transform calc(var(--d) * 1.5) var(--e);
+        pointer-events: none;
+      }
+
+      &:after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 200%;
+        pointer-events: none;
+        background-image: linear-gradient(
+          to bottom,
+          hsla(0, 0%, 0%, 0) 0%,
+          hsla(0, 0%, 0%, 0.009) 11.7%,
+          hsla(0, 0%, 0%, 0.034) 22.1%,
+          hsla(0, 0%, 0%, 0.072) 31.2%,
+          hsla(0, 0%, 0%, 0.123) 39.4%,
+          hsla(0, 0%, 0%, 0.182) 46.6%,
+          hsla(0, 0%, 0%, 0.249) 53.1%,
+          hsla(0, 0%, 0%, 0.320) 58.9%,
+          hsla(0, 0%, 0%, 0.394) 64.3%,
+          hsla(0, 0%, 0%, 0.468) 69.3%,
+          hsla(0, 0%, 0%, 0.540) 74.1%,
+          hsla(0, 0%, 0%, 0.607) 78.8%,
+          hsla(0, 0%, 0%, 0.668) 83.6%,
+          hsla(0, 0%, 0%, 0.721) 88.7%,
+          hsla(0, 0%, 0%, 0.762) 94.1%,
+          hsla(0, 0%, 0%, 0.790) 100%
+        );
+        transform: translateY(-50%);
+        transition: transform calc(var(--d) * 2) var(--e);
+      }
+    }
+
+    .content {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center; /* Center align content vertically */
+      width: 100%;
+      padding: 1rem;
+      transition: transform var(--d) var(--e);
+      z-index: 1;
+      color: white; /* Change text color to white */
+
+      > * + * {
+        margin-top: 1rem;
+      }
+    }
+
+    .title {
+      font-size: 1.3rem;
+      font-weight: bold;
+      line-height: 1.2;
+    }
+
+    .copy {
+      font-family: var(--font-serif);
+      font-size: 1.125rem;
+      font-style: italic;
+      line-height: 1.35;
+    }
+
+    .btn {
+      cursor: pointer;
+      margin-top: 1.5rem;
+      padding: 0.75rem 1.5rem;
+      font-size: 0.65rem;
+      font-weight: bold;
+      letter-spacing: 0.025rem;
+      text-transform: uppercase;
+      color: white;
+      background-color: black;
+      border: none;
+
+      &:hover {
+        background-color: lighten(black, 5%);
+      }
+
+      &:focus {
+        outline: 1px dashed yellow;
+        outline-offset: 3px;
+      }
+    }
+
+    /* Background images for each card */
+    .card:nth-child(1):before {
+      background-image: url('https://i.pinimg.com/564x/7c/9e/ec/7c9eecc1f5083e081e87a9c9baac1807.jpg');
+    }
+
+    .card:nth-child(2):before {
+      background-image: url('https://i.pinimg.com/564x/d3/e8/4a/d3e84a69cbd32fb5ef4e0977662500bd.jpg');
+    }
+
+    .card:nth-child(3):before {
+      background-image: url('https://i.pinimg.com/236x/75/4c/90/754c90c01e49cfe07405c25b560281b0.jpg');
+    }
+
+    .card:nth-child(4):before {
+      background-image: url('https://i.pinimg.com/236x/07/11/34/071134d45860dce06b1325a132caca8c.jpg');
+    }
+  </style>
+</head>
+<body>
+  <main class="page-content">
+    <div class="card">
+      <div class="content">
+        <h2 class="title">Boxing class</h2>
+        <p>(Sunday & Tuesday 12:30pm - 2:00pm)</p>
+        <p class="copy">Boxing can help in improving heart health, body composition, as well as lowering blood pressure.</p>
+       
+      </div>
+    </div>
+    <div class="card">
+      <div class="content">
+        <h2 class="title">Yoga class</h2>
+        <p>(Monday & Wednesday 10:30am - 12:00pm)</p>
+        <p class="copy">Slow movements and deep breathing increase blood flow and warm up muscles, while holding a pose can build strength.</p>
+        
+      </div>
+    </div>
+    <div class="card">
+      <div class="content">
+        <h2 class="title">Aerobics</h2>
+        <p>(Saturday & Thursday 1:00pm - 2:00pm)</p>
+        <p class="copy">Keeps muscles strong, which can help maintain mobility. Exercise can also lower the risk of falls and injuries.</p>
+        
+      </div>
+    </div>
+    <div class="card">
+      <div class="content">
+        <h2 class="title">Zumba</h2>
+        <p>(Monday & Tuesday 3:00pm - 4:30pm)</p>
+        <p class="copy">Is a powerful exercise with a 600 to 1,000-calorie burn in just an hour. Zumba targets lots of different muscle groups at once for total body toning.</p>
+        
+      </div>
+    </div>
+  </main>
+</body>
+</html>
