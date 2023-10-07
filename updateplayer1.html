@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Update Player Profile</title>
+  <style>
+    body {
+      background: #050505;
+      font-family: "Open Sans", sans-serif;
+      color: #fff;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 500px;
+      margin: 0 auto;
+      margin-top: 10%;
+      padding: 20px;
+      background-color: rgba(0, 0, 0, 0.7);
+      border-radius: 10px;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    }
+
+    h1 {
+      text-align: center;
+      font-weight: 300;
+    }
+
+    .update-form {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .update-form label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .update-form input[type="text"] {
+      width: 100%;
+      padding: 5px;
+      margin: 5px 0;
+    }
+
+    .update-form button {
+      background-color: #CF7500;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      margin: 10px 0;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    /* Hover effect for the buttons */
+    .update-form button:hover {
+      background-color: #bb8432; /* Darker color on hover */
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Update Player Profile</h1>
+
+    <!-- Add the update form for information -->
+    <form class="update-form" id="update-form">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" placeholder="Enter updated name"><br>
+
+      <label for="age">Age/Location:</label>
+      <input type="text" id="age" name="age" placeholder="Enter updated age/location"><br>
+
+      <label for="phone">Phone:</label>
+      <input type="text" id="phone" name="phone" placeholder="Enter updated phone number"><br>
+
+      <label for="height_weight">Height/Weight:</label>
+      <input type="text" id="height_weight" name="height_weight" placeholder="Enter updated height/weight"><br>
+
+      <label for="email">Email:</label>
+      <input type="text" id="email" name="email" placeholder="Enter updated email"><br>
+
+      <label for="membership">Password :</label>
+      <input type="text" id="Password" name="Password" placeholder="Enter updated Password"><br>
+
+      <button type="button" id="update-info-button">Update Information</button>
+    </form>
+  </div>
+
+  <script>
+    // JavaScript code for updating information
+    document.getElementById("update-info-button").addEventListener("click", function() {
+      // Get updated information from user inputs
+      const newName = document.getElementById("name").value;
+      const newAge = document.getElementById("age").value;
+      const newPhone = document.getElementById("phone").value;
+      const newHeightWeight = document.getElementById("height_weight").value;
+      const newEmail = document.getElementById("email").value;
+      const newPassword = document.getElementById("password").value; // corrected id
+  
+      // Create a URL for the new page with updated information
+      const updatedPageURL = `updateplayer2.html?name=${newName}&age=${newAge}&phone=${newPhone}&height_weight=${newHeightWeight}&email=${newEmail}&Password=${newPassword}`;
+  
+      // Redirect to the new page
+      window.location.href = updatedPageURL;
+    });
+  </script>
+</body>
+</html>
