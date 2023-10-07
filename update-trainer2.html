@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Trainer Profile </title>
+  <title>Trainer Profile</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,700">
   <style>
     body {
@@ -164,30 +164,52 @@
 </head>
 <body>
   <div class="container">
-    
-   
+    <h1>Trainer Profile</h1>
+
     <div class="service-details">
       <img src="https://i.pinimg.com/236x/5a/54/cf/5a54cfdb6320b05029b8fafb6fdb5f4e.jpg" alt="realm">
       <div class="service-hover-text">
-        <h3>Rasha Ahmad  </h3>
-        <h4>36 Years  </h4>
-        <p> certificated Yoga instructor with 6 years experience .</p>
-        <p> +9678767889 </p>
-      
-        <p> Yoga class Instructor   </p>
-        
+        <h3 id="trainerName">Rasha Ahmad</h3>
+        <h4 id="trainerAge">36 Years</h4>
+        <p id="trainerDescription">Certificated Yoga instructor with 6 years experience.</p>
+        <p id="trainerPhone">+9678767889</p>
+        <p id="trainerRole">Yoga class Instructor</p>
       </div>
       <div class="service-white service-text">
-        <p>Power Up Gym </p>
-        <a href="#">@R11 - R@poweupgym.com</a>
-       
-
+        <p id="trainerGym">Power Up Gym</p>
+        <a id="trainerEmail" href="#">@R11 - R@poweupgym.com</a>
       </div>
+    </div>
+    <div style="text-align: center; margin-top: 20px;">
+      <button>Update</button>
+      <button>Save</button>
+    </div>
   </div>
-  <div style="text-align: center; margin-top: 20px;">
-    <button>Update</button>
-    <button>Save</button>
-  </div>
-</div>
+
+  <script>
+    // Function to parse query parameters from the URL
+    function getQueryParameter(parameterName) {
+      const urlParams = new URLSearchParams(window.location.search);
+      return urlParams.get(parameterName);
+    }
+
+    // Retrieve and set the user-entered data from the URL
+    const newName = getQueryParameter("name");
+    const newAge = getQueryParameter("age");
+    const newDescription = getQueryParameter("description");
+    const newPhone = getQueryParameter("phone");
+    const newRole = getQueryParameter("role");
+    const newGym = getQueryParameter("gym");
+    const newEmail = getQueryParameter("email");
+
+    // Update the HTML content with the user-entered data
+    document.getElementById("trainerName").textContent = newName || "Rasha Ahmad";
+    document.getElementById("trainerAge").textContent = newAge || "36 Years";
+    document.getElementById("trainerDescription").textContent = newDescription || "Certificated Yoga instructor with 6 years experience.";
+    document.getElementById("trainerPhone").textContent = newPhone || "+9678767889";
+    document.getElementById("trainerRole").textContent = newRole || "Yoga class Instructor";
+    document.getElementById("trainerGym").textContent = newGym || "Power Up Gym";
+    document.getElementById("trainerEmail").href = newEmail || "#";
+  </script>
 </body>
 </html>

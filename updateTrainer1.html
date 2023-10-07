@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trainer Profile Update</title>
+  <style>
+    body {
+      background: #050505;
+      font-family: "Open Sans", sans-serif;
+      color: #fff;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 10%;
+    }
+
+    h1 {
+      font-family: "Open Sans", sans-serif;
+      font-weight: 300;
+      text-align: center;
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    .update-form {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .update-form label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .update-form input[type="text"] {
+      width: 100%;
+      padding: 5px;
+      margin: 5px 0;
+    }
+
+    .update-form button {
+      background-color: #DBDBDB;
+      color: #000;
+      border: none;
+      padding: 10px 20px;
+      margin: 10px 0;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    /* Hover effect for the buttons */
+    .update-form button:hover {
+      background-color: #bb8432; /* Darker color on hover */
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Update Trainer Profile</h1>
+
+    <!-- Add the update form for information -->
+    <form class="update-form" id="update-form">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" placeholder="Enter updated name"><br>
+
+      <label for="age">Age:</label>
+      <input type="text" id="age" name="age" placeholder="Enter updated age"><br>
+
+      <label for="phone">Phone:</label>
+      <input type="text" id="phone" name="phone" placeholder="Enter updated phone number"><br>
+
+      <label for="email">Email:</label>
+      <input type="text" id="email" name="email" placeholder="Enter updated email"><br>
+
+      <button type="button" id="update-info-button">Update Information</button>
+    </form>
+  </div>
+
+  <script>
+    // JavaScript code for updating information
+    document.getElementById("update-info-button").addEventListener("click", function() {
+      // Get updated information from user inputs
+      const newName = document.getElementById("name").value;
+      const newAge = document.getElementById("age").value;
+      const newPhone = document.getElementById("phone").value;
+      const newEmail = document.getElementById("email").value;
+
+      // Create a URL for the new page with updated information
+      const updatedPageURL = `update-trainer2.html?name=${newName}&age=${newAge}&phone=${newPhone}&email=${newEmail}`;
+
+      // Redirect to the new page
+      window.location.href = updatedPageURL;
+    });
+  </script>
+</body>
+</html>
