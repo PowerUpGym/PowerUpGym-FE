@@ -16,21 +16,21 @@
     <script type="text/javascript" src="https://d26b395fwzu5fz.cloudfront.net/3.2.6/keen.min.js"></script>
     
     <style>
-        /* Define a CSS class for the background */
+    
         .background-image {
-            background-image: url('https://i.pinimg.com/originals/9f/16/31/9f1631adf803e2d2542b54cf73ce1d7d.jpg'); /* Updated image URL */
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            /* You can set other background properties as needed */
-            height: 100vh;
-        }
+    background-image: url('https://i.pinimg.com/236x/94/80/32/948032b3b98f9816279c99c0ca00418b.jpg'); /* Replace with your high-resolution image URL */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    margin-bottom: auto;
+    height: 85vh;
+}
 
         /* Additional CSS styles for the content inside the background */
         .content {
             text-align: center;
             padding: 20px;
-            color: white;
+            color: rgb(24, 23, 23);
         }
 
         /* Styles for the pricing blocks */
@@ -82,48 +82,87 @@
             }
         }
         .block-content {
-    text-align: center;
-    padding: 20px;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .price {
+            font-size: 28px;
+            text-align: center;
+        }
+
+        .price-label {
+            font-size: 16px;
+            text-align: center;
+        }
+
+        /* Styles for the list items inside the pricing blocks */
+        .block-content ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .block-content ul li {
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+
+        /* Styles for the icons inside the list items */
+        .block-content ul li i {
+            margin-right: 10px;
+            font-size: 24px;
+            vertical-align: middle;
+        }
+
+        .navbar {
+    background-color: transparent;
+    color: rgb(12, 12, 12);
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
 }
 
-.price {
-    font-size: 28px;
-    text-align: center;
+.navbar a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    padding: 10px 20px;
 }
 
-.price-label {
-    font-size: 16px;
-    text-align: center;
+.navbar a:hover {
+    background-color: #cfcece;
 }
 
-/* Styles for the list items inside the pricing blocks */
-.block-content ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-.block-content ul li {
-    margin-bottom: 10px;
-    font-size: 18px;
-}
-
-/* Styles for the icons inside the list items */
-.block-content ul li i {
-    margin-right: 10px;
+/* Styles for the logo (Power Up Gym) */
+.logo {
     font-size: 24px;
-    vertical-align: middle;
+    color: rgb(0, 0, 0);
+    margin-right: 20px;
+    border: 1px solid rgb(22, 22, 22); /* Add this line to add a border around the logo */
+    padding: 5px 10px; /* Add padding to make the border more visible */
+    border-radius: 5px
 }
-
     </style>
 </head>
 <body>
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <a href="#">Home</a>
+        <a href="#">About Us</a>
+        <a href="#">My profile </a>
+        <a href="#">Notifications </a>
+        <a href="#">View Trainers </a>
+        <a href="#">View Classes </a>
+        <a href="#">View packages  </a>
+       
+        <div class="logo">
+            <i class="fa fa-dumbbell title-icon"></i> Power Up Gym
+        </div> 
+    </div>
+
     <!-- Create a div with the background-image class -->
     <div class="background-image">
         <!-- Add content inside the background -->
-        <div class="content">
-            <h1><i class="fa fa-dumbbell title-icon"></i> Power Up Gym </h1>
-            
-        </div>
+        
     </div>
     
     <!-- Pricing Blocks -->
